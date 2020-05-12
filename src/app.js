@@ -9,6 +9,7 @@ const forecast= require('./utils/forecast')
 const pathToPublic   = path.join(__dirname,'../public')
 const pathToViews    = path.join(__dirname,'../templates/views')
 const pathToPartials = path.join(__dirname,'../templates/partials')
+const port           = process.env.PORT || 3000
 
 //Setup handlebars engine and views location
 app.set('view engine','hbs')
@@ -86,6 +87,6 @@ app.get('*',(req,res)=>{
     })
 })
 
-app.listen(3000,()=>{
-    console.log('Server is up and running on port:3000')
+app.listen(port,()=>{
+    console.log('Server is up and running on port:'+port)
 })
